@@ -1,0 +1,1026 @@
+CSS:
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html, body {
+    height: 100%;
+    background: #000 url('background.png') no-repeat top center;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    border-radius: 20px;
+    border: 1px dashed #666666;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header__inner nav ul {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.header__inner nav ul li a {
+    color: #ffffff;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.header__inner nav ul li a:hover {
+    color: #808080;
+}
+
+.btn {
+    padding: 15px 40px;
+    border-radius: 15px;
+    background: #376b95;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #2d7dc0;
+}
+
+.main__inner {
+    display: grid;
+    align-items: center;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.main__content {
+    margin-top: 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+    justify-items: center;
+    align-items: start;
+}
+
+.project-item {
+    background: rgba(15, 95, 132, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    background: rgba(15, 95, 132, 1);
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-title {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.btn-details {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #376b95;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #2d7dc0;
+}
+
+.project-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.project-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+
+.project-blog, .project-links {
+    flex: 1;
+}
+
+.project-blog h2 {
+    text-align: center;
+}
+
+.blog-entries {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
+    border-radius: 10px;
+}
+
+/* Стилизация скроллбара */
+.blog-entries::-webkit-scrollbar {
+    width: 12px;
+}
+
+.blog-entries::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(55, 107, 149, 0.5);
+}
+
+.blog-entries::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #376b95;
+    border: 2px solid #376b95;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator {
+    width: 100%;
+    height: 3px;
+    background-color: #376b95;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-separator {
+    width: 100%;
+    height: 10px;
+    background-color: #376b95;
+    margin: 50px auto; /* Центрируем сепаратор */
+    border-radius: 5px; /* Скруглим углы для более мягкого вида */
+}
+
+.blog-entry {
+    background: rgba(51, 51, 51, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.blog-entry:hover {
+    background: rgba(51, 51, 51, 1);
+    transform: translateY(-5px);
+}
+
+.blog-entry h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #376b95;
+}
+
+.blog-entry p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.date {
+    font-size: 14px;
+    color: #808080;
+}
+
+.link-entry {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-link {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #376b95;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #2d7dc0;
+}
+
+.project-developers {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.developers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.developers-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(51, 51, 51, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.developer-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #376b95;
+    margin-bottom: 15px;
+}
+
+.developer-info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.developer-info p {
+    margin: 3px 0 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.developer-info p:last-child {
+    font-weight: bold;
+    color: #fff;
+}
+
+.badge {
+    background-color: #376b95;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+}
+
+.badge-dev {
+    background-color: #6600ff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 14px;
+    position: relative;
+}
+
+.badge-owner {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    position: relative;
+}
+
+.badge-test {
+    background-color: #5b3333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    position: relative;
+}
+
+/* 12.12.2024 SEARCH HASTAGS */
+
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#hashtag-search {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #376b95;
+    font-size: 16px;
+    opacity: 0.5;
+    background-color: #376b95;
+    transition: background-color 0.3s ease;
+    color: #000;
+}
+
+#hashtag-search:hover {
+    background-color: #2d7dc0;
+}
+
+#hashtag-search::placeholder {
+    color: #000;
+}
+
+/* Обновлённые стили для страницы проектов */
+.projects-grid .hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем хештеги */
+    max-width: 350px; /* Ограничим ширину для размещения не более 4 хештегов в строке */
+    margin: 25px auto; /* Добавим отступы и центрируем контейнер */
+}
+
+.projects-grid .hashtag {
+    display: inline-block;
+    background-color: #376b95;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+/* Страница конкретного проекта */
+.project-details .hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 350px;
+    margin-top: 10px;
+}
+
+.project-details .hashtag {
+    display: inline-block;
+    background-color: #376b95;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+
+/* SOCIAL NETWORKD CONTACTS // 15.12.2024 */
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.contact-card {
+    
+    display: flex;
+    align-items: center;
+    background: rgba(55, 107, 149, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(55, 107, 149, 1);
+}
+
+.contact-card-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-card-logo {
+    width: 60px;  /* Измените размер по вашему усмотрению */
+    height: 60px;
+    object-fit: contain;  /* Отображение полного логотипа */
+    border-radius: 0;  /* Удалите скругление */
+}
+
+.contact-card-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-card-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.contact-card-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.extra-space {
+    height: 100px;
+    background: transparent;
+}
+
+INDEX.HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>LeClark</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="icon" type="image/x-icon" href="logo.ico">
+</head>
+<body>
+	<header class="header">
+		<div class="container header__container">
+			<div class="header__inner">
+				<div class="logo">
+					<img src="logo.png" alt="логотип" />
+				</div>
+				<nav class="header__nav">
+					<ul>
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="about.html">О мне</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+						<li><a href="projects.html">Проекты</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container main__container">
+			<div class="main__inner">
+				<div class="main__content">
+					<h1 style="margin-bottom: 10px">Продам аз войс</h1>
+					<p>Мы продаем аз войс ток за 25к потому что мы аризона сваг</p>
+					<div style="margin-top: 30px">
+						<a href="#" class="btn">Приобрести</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="extra-space"></div>
+	</main>
+</body>
+</html>
+
+ABOUT.HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__inner">
+                <div class="logo">
+                    <a href="index.html"><img src="logo.svg" alt="логотип"></a>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О мне</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__auth">
+                    <a href="#" class="btn">Войти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <h1>О мне</h1>
+            <p>Информация о мне.</p>
+        </div>
+    <div class="extra-space"></div>
+    </main>
+</body>
+</html>
+
+CONTACTS.HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__inner">
+                <div class="logo">
+                    <a href="index.html"><img src="logo.svg" alt="логотип"></a>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О мне</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                    </il>
+                </nav>
+                <div class="header__auth">
+                    <a href="#" class="btn">Войти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <h1>Контакты</h1>
+            <div class="contact-cards">
+                <!-- Пример карточки -->
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="discord.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Discord</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="vk.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>VK</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="instagram.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Instagram</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="github.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>GitHub</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="telegram.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Telegram</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="x.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>X</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="guilded.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Guilded</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="twitch.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Twitch</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="globe.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Blast.Hk</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="globe.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Pawno-Info</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="globe.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Pawn.Wiki</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="globe.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Pawno Rus</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="extra-space"></div>
+        <div class="container main__container">
+            <h1>Сообщества</h1>
+            <div class="contact-cards">
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="discord.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Le Clark | Discord</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="telegram.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Clark SG | Telegram</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="tiktok.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Clark SG | TikTok</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="guilded.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>Le Clark | Guilded</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="extra-space"></div>
+        <div class="container main__container">
+            <h1>Друзья</h1>
+            <div class="contact-cards">
+                <a href="https://example.com" class="contact-card">
+                    <div class="contact-card-content">
+                        <img src="telegram.png" alt="Site Logo" class="contact-card-logo">
+                        <div class="contact-card-info">
+                            <h2>lazyview beats | Telegram</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    <div class="extra-space"></div>
+    </main>
+</body>
+</html>
+
+PROJECTS.HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__inner">
+                <div class="logo">
+                    <a href="index.html"><img src="logo.svg" alt="логотип"></a>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О мне</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__auth">
+                    <a href="#" class="btn">Войти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <h1>Проекты</h1>
+            <div class="search-bar">
+                <input type="text" id="hashtag-search" placeholder="Поиск по Title/Hashtag">
+            </div>
+            <div class="projects-grid"></div> <!-- Оставляем только контейнер -->
+        </div>
+    <div class="extra-space"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('hashtag-search');
+    
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    const projectsGrid = document.querySelector('.projects-grid');
+                    
+                    const displayProjects = (filteredData) => {
+                        projectsGrid.innerHTML = ''; // Очистить контейнер перед добавлением новых элементов
+    
+                        filteredData.forEach(project => {
+                            const projectItem = document.createElement('div');
+                            projectItem.classList.add('project-item');
+                            
+                            projectItem.innerHTML = `
+                                <img src="${project.image}" alt="${project.title}" class="project-thumbnail">
+                                <h2 class="project-title">${project.title}</h2>
+                                <div class="hashtags">
+                                    ${project.hashtags.map(tag => `<span class="hashtag">${tag}</span>`).join('')}
+                                </div>
+                                <a href="${project.link}" class="btn btn-details">Подробнее</a>
+                            `;
+    
+                            projectsGrid.appendChild(projectItem);
+                        });
+                    };
+    
+                    displayProjects(data); // Отобразить все проекты из JSON
+    
+                    searchInput.addEventListener('input', function() {
+                        const searchValue = this.value.toLowerCase();
+                        const filteredData = data.filter(project => 
+                            project.hashtags.some(tag => tag.toLowerCase().includes(searchValue)) ||
+                            project.title.toLowerCase().includes(searchValue)
+                        );
+    
+                        displayProjects(filteredData); // Отобразить только отфильтрованные проекты
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
+
+PROJECTS.JSON:
+[
+    {
+        "title": "Le Clark Games",
+        "image": "leclarkgames.jpg",
+        "link": "project1.html",
+        "hashtags": ["#Студия", "#Python", "#PAWN"]
+    }
+]
+
+LECLARKGAMES.HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__inner">
+                <div class="logo">
+                    <a href="index.html"><img src="logo.svg" alt="логотип"></a>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О мне</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <div class="project-details">
+                <div class="project-image-container">
+                    <img src="project1-thumbnail.jpg" alt="Проект 1" class="project-image">
+                    <div class="hashtags"></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-text">
+                        <h1>Le Clark Games<span class="badge">Студия</span></h1>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                    </div>
+                </div>
+            </div>
+            <div class="main-separator"></div>
+            <div class="project-content">
+                <div class="project-blog">
+                    <h2>Лог обновлений проекта</h2>
+                    <div class="separator"></div>
+                    <div class="blog-entries">
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Создание студии</n>
+                            <span class="date">17.05.2023</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">14.05.2022</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">17.03.2023</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">17.03.2023</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">17.03.2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <h2>Ссылки</h2>
+                    <div class="separator"></div>
+                    <div class="link-entry">
+                        <a href="https://example.com" class="btn btn-link">GitHub</a>
+                    </div>
+                    <div class="link-entry">
+                        <a href="https://example.com" class="btn btn-link">VK</a>
+                    </div>
+                    <div class="link-entry">
+                        <a href="https://example.com" class="btn btn-link">Telegram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-developers">
+                <h2>Состав команды</h2>
+                <div class="separator"></div>
+                <div class="developers-grid">
+                    <div class="developers-entry">
+                        <img src="e4calipt.jpg" alt="Евкалипт Ноунеймович" class="developer-image">
+                        <div class="developer-info">
+                            <h3>Евкалипт Ноунеймович</h3>
+                            <span class="badge-owner">Владелец</span>
+                        </div>
+                    </div>
+                    <div class="developers-entry">
+                        <img src="leclark.jpg" alt="Артем Лекларк" class="developer-image">
+                        <div class="developer-info">
+                            <h3>Артем Лекларк</h3>
+                            <span class="badge-dev">Разработчик</span>
+                        </div>
+                    </div>
+                    <div class="developers-entry">
+                        <img src="fastconnect.jpg" alt="Дмитрий Борисов" class="developer-image">
+                        <div class="developer-info">
+                            <h3>Дмитрий Борисов</h3>
+                            <span class="badge-dev">Разработчик</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="extra-space"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectHashtags = document.querySelector('.hashtags');
+
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Найдите проект по какому-то уникальному идентификатору, например, названию
+                    const project = data.find(project => project.title === "Le Clark Games");
+
+                    if (project) {
+                        project.hashtags.forEach(tag => {
+                            const hashtag = document.createElement('span');
+                            hashtag.classList.add('hashtag');
+                            hashtag.textContent = tag;
+                            projectHashtags.appendChild(hashtag);
+                        });
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

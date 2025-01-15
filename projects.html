@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__inner">
+                <div class="logo">
+                    <a href="index.html"><img src="logo.svg" alt="логотип"></a>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О мне</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__auth">
+                    <a href="#" class="btn">Войти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <h1>Проекты</h1>
+            <div class="search-bar">
+                <input type="text" id="hashtag-search" placeholder="Поиск по Title/Hashtag">
+            </div>
+            <div class="projects-grid"></div> <!-- Оставляем только контейнер -->
+        </div>
+    <div class="extra-space"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('hashtag-search');
+    
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    const projectsGrid = document.querySelector('.projects-grid');
+                    
+                    const displayProjects = (filteredData) => {
+                        projectsGrid.innerHTML = ''; // Очистить контейнер перед добавлением новых элементов
+    
+                        filteredData.forEach(project => {
+                            const projectItem = document.createElement('div');
+                            projectItem.classList.add('project-item');
+                            
+                            projectItem.innerHTML = `
+                                <img src="${project.image}" alt="${project.title}" class="project-thumbnail">
+                                <h2 class="project-title">${project.title}</h2>
+                                <div class="hashtags">
+                                    ${project.hashtags.map(tag => `<span class="hashtag">${tag}</span>`).join('')}
+                                </div>
+                                <a href="${project.link}" class="btn btn-details">Подробнее</a>
+                            `;
+    
+                            projectsGrid.appendChild(projectItem);
+                        });
+                    };
+    
+                    displayProjects(data); // Отобразить все проекты из JSON
+    
+                    searchInput.addEventListener('input', function() {
+                        const searchValue = this.value.toLowerCase();
+                        const filteredData = data.filter(project => 
+                            project.hashtags.some(tag => tag.toLowerCase().includes(searchValue)) ||
+                            project.title.toLowerCase().includes(searchValue)
+                        );
+    
+                        displayProjects(filteredData); // Отобразить только отфильтрованные проекты
+                    });
+                });
+        });
+    </script>
+</body>
+</html>

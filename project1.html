@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__inner">
+                <div class="logo">
+                    <a href="index.html"><img src="logo.svg" alt="логотип"></a>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О мне</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container">
+            <div class="project-details">
+                <div class="project-image-container">
+                    <img src="project1-thumbnail.jpg" alt="Проект 1" class="project-image">
+                    <div class="hashtags"></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-text">
+                        <h1>Le Clark Games<span class="badge">Студия</span></h1>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                        <n>Description</n>
+                    </div>
+                </div>
+            </div>
+            <div class="main-separator"></div>
+            <div class="project-content">
+                <div class="project-blog">
+                    <h2>Лог обновлений проекта</h2>
+                    <div class="separator"></div>
+                    <div class="blog-entries">
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Создание студии</n>
+                            <span class="date">17.05.2023</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">14.05.2022</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">17.03.2023</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">17.03.2023</span>
+                        </div>
+                        <div class="blog-entry">
+                            <h3>Обновление 1</h3>
+                            <n>Тест</n>
+                            <span class="date">17.03.2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <h2>Ссылки</h2>
+                    <div class="separator"></div>
+                    <div class="link-entry">
+                        <a href="https://example.com" class="btn btn-link">GitHub</a>
+                    </div>
+                    <div class="link-entry">
+                        <a href="https://example.com" class="btn btn-link">VK</a>
+                    </div>
+                    <div class="link-entry">
+                        <a href="https://example.com" class="btn btn-link">Telegram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-developers">
+                <h2>Состав команды</h2>
+                <div class="separator"></div>
+                <div class="developers-grid">
+                    <div class="developers-entry">
+                        <img src="e4calipt.jpg" alt="Евкалипт Ноунеймович" class="developer-image">
+                        <div class="developer-info">
+                            <h3>Евкалипт Ноунеймович</h3>
+                            <span class="badge-owner">Владелец</span>
+                        </div>
+                    </div>
+                    <div class="developers-entry">
+                        <img src="leclark.jpg" alt="Артем Лекларк" class="developer-image">
+                        <div class="developer-info">
+                            <h3>Артем Лекларк</h3>
+                            <span class="badge-dev">Разработчик</span>
+                        </div>
+                    </div>
+                    <div class="developers-entry">
+                        <img src="fastconnect.jpg" alt="Дмитрий Борисов" class="developer-image">
+                        <div class="developer-info">
+                            <h3>Дмитрий Борисов</h3>
+                            <span class="badge-dev">Разработчик</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="extra-space"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectHashtags = document.querySelector('.hashtags');
+
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Найдите проект по какому-то уникальному идентификатору, например, названию
+                    const project = data.find(project => project.title === "Le Clark Games");
+
+                    if (project) {
+                        project.hashtags.forEach(tag => {
+                            const hashtag = document.createElement('span');
+                            hashtag.classList.add('hashtag');
+                            hashtag.textContent = tag;
+                            projectHashtags.appendChild(hashtag);
+                        });
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
